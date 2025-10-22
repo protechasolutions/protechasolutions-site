@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProTechA Solutions | Innovative Apps for Everyday Use</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="ProTechA Solutions is a tech software developer building smart, efficient, and intuitive apps for mobile devices." />
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --accent: #0070f3;
+      --text: #222;
+      --bg: #fafafa;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      max-width: 600px;
+      line-height: 1.6;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a.button {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s ease-in-out;
+    }
+
+    a.button:hover {
+      background: #005ac1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #eee;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #111; color: #eee; }
+      header, footer { background: #1b1b1b; border-color: #333; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>ProTechA Solutions</h1>
+    <nav>
+      <a href="mailto:support@protechasolutions.com" style="color:var(--accent); text-decoration:none;">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="logo-placeholder.png" alt="ProTechA Solutions Logo" width="120" height="120" style="border-radius:20px;" />
+    <h2>Building Smart, Simple, Reliable Apps</h2>
+    <p>We develop innovative software tools designed to help creators, athletes, and everyday users achieve more through technology.  
+       Our first app will be available soon on the App Store.</p>
+
+    <div class="buttons">
+      <!-- Replace this link with your actual App Store URL when live -->
+      <a class="button" href="#">View on the App Store</a>
+      <a class="button" href="mailto:support@protechasolutions.com">Get Support</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> ProTechA Solutions LLC · All Rights Reserved · 
+    <a href="privacy.html" style="color:var(--accent); text-decoration:none;">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
