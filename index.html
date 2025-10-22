@@ -2,131 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ProTechA Solutions | Innovative Apps for Everyday Use</title>
+  <meta name="description" content="ProTechA Solutions builds smart, efficient, and intuitive apps for everyday use." />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="ProTechA Solutions is a tech software developer building smart, efficient, and intuitive apps for mobile devices." />
-
-  <!-- Styles -->
   <style>
-    :root {
-      --accent: #0070f3;
-      --text: #222;
-      --bg: #fafafa;
+    :root{
+      --accent:#0070f3;
+      --bg:#0d0d0d;
+      --text:#eaeaea;
+      --muted:#b3b3b3;
+      --card:#121212;
+      --line:#1f1f1f;
+      --btn-hover:#005ac1;
+      --maxw:1100px;
+      --pad:24px;
     }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
     }
 
-    header {
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    a{color:var(--accent); text-decoration:none}
+
+    header{
+      position:sticky; top:0;
+      background:rgba(13,13,13,.9);
+      backdrop-filter:saturate(180%) blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:10px var(--pad);
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:0}
+    .brand img{width:40px; height:40px; border-radius:10px; display:block}
+    .brand h1{margin:0; font-size:18px; font-weight:600; color:#cfe6ff; white-space:nowrap}
+
+    main{flex:1}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:36px var(--pad) 28px}
+
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:36px 20px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.25rem;
-      color: var(--accent);
-      font-weight: 600;
+    .logo-box{
+      width:192px; height:192px; /* 3x larger */
+      border-radius:24px;
+      display:grid; place-items:center;
+      background:#0f0f0f;
+      border:1px solid #1c1c1c;
+      margin-bottom:16px;
+    }
+    .logo-box img{
+      width:170px; height:170px;
+      border-radius:20px;
+      display:block;
+      object-fit:contain;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem 1rem;
+    .hero h2{
+      margin:0;
+      font-size:clamp(26px,3.5vw,36px);
+      line-height:1.2;
+      letter-spacing:.2px;
+    }
+    .hero p{
+      margin:10px 0 20px;
+      color:var(--muted);
+      max-width:70ch;
+      line-height:1.6;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-top: 1rem;
+    .actions{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
     }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px;
+      border-radius:10px; font-weight:600;
+      border:1px solid var(--line);
+      background:var(--accent);
+      color:#fff;
+    }
+    .btn.secondary{background:#1a1a1a; color:#fff; border-color:#2a2a2a}
+    .btn:hover{background:var(--btn-hover)}
+    .btn.secondary:hover{background:#222}
 
-    p {
-      max-width: 600px;
-      line-height: 1.6;
-      margin: 0.5rem auto 1.5rem;
+    footer{
+      border-top:1px solid var(--line);
+      color:#9a9a9a;
     }
-
-    .buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .foot{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:14px var(--pad);
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:8px;
+      justify-content:center;
     }
-
-    a.button {
-      background: var(--accent);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s ease-in-out;
-    }
-
-    a.button:hover {
-      background: #005ac1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #eee;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body { background: #111; color: #eee; }
-      header, footer { background: #1b1b1b; border-color: #333; }
-    }
+    .foot a{color:#9ecbff}
   </style>
 </head>
-
 <body>
   <header>
-    <h1>ProTechA Solutions</h1>
-    <nav>
-      <a href="mailto:support@protechasolutions.com" style="color:var(--accent); text-decoration:none;">Contact</a>
-    </nav>
+    <div class="bar">
+      <div class="brand">
+        <img src="logo-placeholder.png" alt="ProTechA Solutions logo" onerror="this.style.visibility='hidden'">
+        <h1>ProTechA Solutions</h1>
+      </div>
+      <nav><a href="mailto:support@protechasolutions.com">Contact</a></nav>
+    </div>
   </header>
 
   <main>
-    <img src="logo-placeholder.png" alt="ProTechA Solutions Logo" width="120" height="120" style="border-radius:20px;" />
-    <h2>Building Smart, Simple, Reliable Apps</h2>
-    <p>We develop innovative software tools designed to help creators, athletes, and everyday users achieve more through technology.  
-       Our first app will be available soon on the App Store.</p>
+    <section class="wrap">
+      <div class="hero">
+        <div class="logo-box">
+          <img src="logo-placeholder.png" alt="ProTechA Solutions" onerror="this.style.visibility='hidden'">
+        </div>
+        <h3>Building Intelligent Apps That Transform Data Into Performance</h3>
+        <p>
+          We develop innovative software tools designed to help creators, athletes, and everyday users achieve more through technology.
+          Our first app will be available soon on the App Store.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#">View on the App Store</a>
+          <a class="btn secondary" href="mailto:support@protechasolutions.com">Get Support</a>
+        </div>
+      </div>
+        <section class="wrap" style="text-align:center; margin-top:20px;">
+          <p style="color:#b3b3b3; max-width:70ch; margin:auto; line-height:1.6;">
+            Our mission is to bridge technology and human performance through practical, data-driven software that enhances how people plan, analyze, and optimize complex systems.
+          </p>
+        </section>
 
-    <div class="buttons">
-      <!-- Replace this link with your actual App Store URL when live -->
-      <a class="button" href="#">View on the App Store</a>
-      <a class="button" href="mailto:support@protechasolutions.com">Get Support</a>
-    </div>
+    </section>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> ProTechA Solutions LLC · All Rights Reserved · 
-    <a href="privacy.html" style="color:var(--accent); text-decoration:none;">Privacy Policy</a>
+    <div class="foot">
+      <span>&copy; <span id="year"></span> ProTechA Solutions LLC · All Rights Reserved ·</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
+
